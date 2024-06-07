@@ -1,0 +1,28 @@
+.headerStyle {
+    text-align: center;
+    color: #da7777;
+    font-size: 35px;
+    font-weight: 700;
+    height: 120px;
+    padding-inline: 48px;
+    line-height: 64px;
+    background-color: #dcd1dc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentStyle {
+    text-align: center;
+    min-height: 120px;
+    line-height: 120px;
+    color: #da7777;
+    background-color: #fff7ff;
+    overflow: auto;
+    padding: 0 80px;
+}
+
+.layoutStyle {
+    overflow: hidden;
+    height: 100vh;
+}
