@@ -1,0 +1,21 @@
+.taskItem {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+    line-height: initial;
+}
+
+.taskText {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.taskDone {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.checkbox {
+    width: 16px;
+}

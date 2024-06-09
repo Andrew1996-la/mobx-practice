@@ -1,6 +1,7 @@
 import { Layout } from 'antd';
-import s from './layout.module.css';
 import CreateTask from '../CreateTask/CreateTask';
+import s from './layout.module.css';
+import TaskItemContainer from '../TaskItem/TaskItemContainer';
 
 const MainLayout = () => {
     const { Header, Content } = Layout;
@@ -12,6 +13,7 @@ const MainLayout = () => {
             </Header>
             <Content className={s.contentStyle}>
                 <CreateTask />
+                <TaskItemContainer />
             </Content>
         </Layout>
     );
