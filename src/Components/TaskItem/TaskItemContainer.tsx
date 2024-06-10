@@ -1,15 +1,44 @@
 import { CheckboxProps } from 'antd';
-import { FC, useState } from 'react';
+import { FC } from 'react';
+import { useStore } from '../../stores/storeContext';
 import TaskItem from './TaskItem';
 
-const TaskItemContainer: FC = () => {
-    const [isDone, setIsDone] = useState<boolean>(false);
+type TaskItemContainerProps = {
+    textTask: string;
+    isDone: boolean;
+    id: string;
+};
 
-    const onChange: CheckboxProps['onChange'] = (e) => {
-        setIsDone(e.target.checked);
+const TaskItemContainer: FC<TaskItemContainerProps> = ({
+    textTask,
+    isDone,
+    id,
+}) => {
+    const { taskStore, modalStore } = useStore();
+
+
+    const removeTask = (id: string) => {
+        taskStore.removeTodoAction(id);
     };
 
-    return <TaskItem isDone={isDone} onChange={onChange} />;
+    const onChange: CheckboxProps['onChange'] = (e) => {
+        taskStore.checkTodoAction(id, e.target.checked);
+    };
+
+    const editTask = () => {
+        modalStore.showModal();
+    }
+
+    return (
+        <TaskItem
+            isDone={isDone}
+            onChange={onChange}
+            textTask={textTask}
+            removeTask={removeTask}
+            editTask={editTask}
+            id={id}
+        />
+    );
 };
 
 export default TaskItemContainer;

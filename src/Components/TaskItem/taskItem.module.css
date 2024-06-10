@@ -1,9 +1,11 @@
 .taskItem {
-    display: flex;
-    align-items: center;
-    justify-content: left;
     gap: 15px;
     line-height: initial;
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    align-items: center;
+    justify-items: flex-start;
+    align-items: normal;
 }
 
 .taskText {
@@ -18,4 +20,8 @@
 
 .checkbox {
     width: 16px;
+}
+
+.delete {
+    cursor: pointer;
 }
